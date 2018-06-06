@@ -114,11 +114,26 @@ class AdbUtil(object):
     def keyevent(self, keycode):
         self.run_device_cmd('shell input keyevent %d' % keycode)
 
+    def press_menu(self):
+        self.keyevent(82)
+
     def press_home(self):
         self.keyevent(3)
 
     def press_back(self):
         self.keyevent(4)
+
+    def press_power(self):
+        self.keyevent(26)
+
+    def volume_up(self):
+        self.keyevent(24)
+
+    def volume_down(self):
+        self.keyevent(25)
+
+    def mute(self):
+        self.keyevent(164)
 
     def show_virtual_keys(self):
         output = self.run_device_cmd('shell am startservice -n com.android.systemui/.SystemUIService')

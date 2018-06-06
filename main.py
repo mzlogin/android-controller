@@ -27,11 +27,26 @@ class CWnd(tk.Frame):
         self.screencap = tk.Button(self, text='截屏', command=self.on_screencap)
         self.screencap.pack(fill=tk.X)
 
+        self.press_menu = tk.Button(self, text='MENU', command=self.on_press_menu)
+        self.press_menu.pack(fill=tk.X)
+
         self.press_home = tk.Button(self, text='HOME', command=self.on_press_home)
         self.press_home.pack(fill=tk.X)
 
         self.press_back = tk.Button(self, text='BACK', command=self.on_press_back)
         self.press_back.pack(fill=tk.X)
+
+        self.press_power = tk.Button(self, text='电源键', command=self.on_press_power)
+        self.press_power.pack(fill=tk.X)
+
+        self.volume_up = tk.Button(self, text='音量+', command=self.on_volume_up)
+        self.volume_up.pack(fill=tk.X)
+
+        self.volume_down = tk.Button(self, text='音量-', command=self.on_volume_down)
+        self.volume_down.pack(fill=tk.X)
+
+        self.mute = tk.Button(self, text='静音', command=self.on_mute)
+        self.mute.pack(fill=tk.X)
 
     def on_refresh_device(self):
         self.device_list.delete(0, self.device_list.size() - 1)
@@ -59,6 +74,12 @@ class CWnd(tk.Frame):
             self.screencap_image.config(image=self.screen_image)
             pass
 
+    def on_press_menu(self):
+        if not self.set_current_device():
+            return
+
+        self.adb.press_menu()
+
     def on_press_home(self):
         if not self.set_current_device():
             return
@@ -70,6 +91,30 @@ class CWnd(tk.Frame):
             return
 
         self.adb.press_back()
+
+    def on_press_power(self):
+        if not self.set_current_device():
+            return
+
+        self.adb.press_power()
+
+    def on_volume_up(self):
+        if not self.set_current_device():
+            return
+
+        self.adb.volume_up()
+
+    def on_volume_down(self):
+        if not self.set_current_device():
+            return
+
+        self.adb.volume_down()
+
+    def on_mute(self):
+        if not self.set_current_device():
+            return
+
+        self.adb.mute()
 
     def set_current_device(self):
         index = self.device_list.curselection()
