@@ -4,9 +4,13 @@
 
 ## 截图
 
+<img width="640" src="./screenshots/main.png" align=center />
+
 ![](./screenshots/main.png)
 
 ## 用法
+
+> 请确保已经安装 adb 且已添加到 PATH 环境变量中，手机已经开启「USB调试」。
 
 1. 安装 Python3；
 
@@ -21,3 +25,7 @@
     ```sh
     python3 main.py
     ```
+
+## 注意事项
+
+* 模拟按键的功能在部分机型（比如小米）需要在「开发者选项」里打开允许通过 USB 调试修改权限或模拟点击的开关。
