@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 import tkinter as tk
+from PIL import Image, ImageTk
 from adb_util import *
 
 
@@ -69,8 +70,11 @@ class CWnd(tk.Frame):
 
         image_name = 'sc.png'
         if self.adb.screencap(image_name):
-            self.screen_image = tk.PhotoImage(file=image_name)
-            self.screen_image = self.screen_image.subsample(3)
+            image = Image.open(image_name)
+            resized_image = image.resize(tuple(map(lambda x: int(x / 3), image.size)))
+            self.screen_image = ImageTk.PhotoImage(image=resized_image)
+            # self.screen_image = tk.PhotoImage(file=image_name)
+            # self.screen_image = self.screen_image.subsample(3)
             self.screencap_image.config(image=self.screen_image)
             pass
 
@@ -128,6 +132,7 @@ class CWnd(tk.Frame):
 
 def main():
     root = tk.Tk()
+    root.title('Android Controller')
     wnd = CWnd(root)
     root.mainloop()
 
