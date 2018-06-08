@@ -4,9 +4,7 @@
 
 ## 截图
 
-<img width="640" src="./screenshots/main.png" align=center />
-
-![](./screenshots/main.png)
+<div align="center"><img width="640" src="./screenshots/main.png" /></div>
 
 ## 用法
 
