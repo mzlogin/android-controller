@@ -2,6 +2,17 @@
 
 在电脑上控制手机的控制器，基于 Python3。
 
+**目录**
+
+<!-- vim-markdown-toc GFM -->
+
+* [截图](#截图)
+* [用法](#用法)
+* [需求 list](#需求-list)
+* [注意事项](#注意事项)
+
+<!-- vim-markdown-toc -->
+
 ## 截图
 
 <div align="center"><img width="640" src="./screenshots/main.png" /></div>
@@ -17,23 +28,24 @@
     ```sh
     pip3 install -r requirements.txt
     ```
-
 3. 运行
 
     ```sh
     python3 main.py
     ```
-## 需求list
 
-1. 安装
-2. 卸载
-3. 覆盖安装
-4. 录屏
-5. 截图
-6. 清除数据
-7. 打开wifi
-8. 关闭wifi
+## 需求 list
 
+- [X] 截图
+- [ ] 安装应用
+- [ ] 卸载应用
+- [ ] 覆盖安装
+- [ ] 清除数据
+- [ ] 录屏
+- [ ] 打开 WiFi
+- [ ] 关闭 WiFi
+- [ ] 屏幕点击事件
+- [ ] 屏幕滑动事件
 
 ## 注意事项
 
