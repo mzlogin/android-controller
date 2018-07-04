@@ -142,6 +142,15 @@ class AdbUtil(object):
         else:
             return False
 
+    def get_current_focused_activity(self):
+        output = self.run_device_cmd('shell dumpsys activity activities | grep mFocusedActivity')
+
+        pattern = re.compile(r'.* ([^ ]*/[^ ]*) .*')
+        rematch = pattern.match(output)
+        if rematch is not None:
+            output = rematch.group(1)
+        return output
+
     def run_device_cmd(self, cmd):
         command = '%s %s' % (self.cmd_prefix, cmd)
         return self.run_cmd(command)
