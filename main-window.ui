@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>610</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>20</y>
+      <width>160</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QComboBox" name="deviceListComboBox"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="refreshDeviceButton">
+       <property name="text">
+        <string>刷新设备列表</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="showVirtualKeyButton">
+       <property name="text">
+        <string>显示虚拟按键</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="screencapButton">
+       <property name="text">
+        <string>截屏</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pressMenuButton">
+       <property name="text">
+        <string>MENU</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="homeButton">
+       <property name="text">
+        <string>HOME</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="backButton">
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="powerButton">
+       <property name="text">
+        <string>电源键</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="volumeUpButton">
+       <property name="text">
+        <string>音量+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="volumeDownButton">
+       <property name="text">
+        <string>音量-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="muteButton">
+       <property name="text">
+        <string>静音</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="currentActivityButton">
+       <property name="text">
+        <string>当前Activity</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="outputTextEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="screencapView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>381</width>
+      <height>741</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>截图显示区</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

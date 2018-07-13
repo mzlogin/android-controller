@@ -137,7 +137,7 @@ class AdbUtil(object):
 
     def show_virtual_keys(self):
         output = self.run_device_cmd('shell am startservice -n com.android.systemui/.SystemUIService')
-        if output.find('Starting service') is not None:
+        if output.find('Starting service') != -1:
             return True
         else:
             return False
@@ -150,6 +150,13 @@ class AdbUtil(object):
         if rematch is not None:
             output = rematch.group(1)
         return output
+
+    def install_apk(self, apk):
+        output = self.run_device_cmd('install -r %s' % apk)
+        if output.find('Success') != -1:
+            return True
+        else:
+            return False
 
     def run_device_cmd(self, cmd):
         command = '%s %s' % (self.cmd_prefix, cmd)
