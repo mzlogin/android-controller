@@ -26,9 +26,18 @@
 
 2. 安装依赖库；
 
+    Windows：
+
     ```sh
     pip3 install -r requirements.txt
     ```
+
+    macOS：
+    
+    ```sh
+    brew install pyqt5
+    ```
+
 3. 运行
 
     ```sh
@@ -50,10 +59,16 @@
 
 ## 开发
 
-新版基于 PyQt5，main-window.ui 文件使用 Qt Designer 编辑，从 .ui 文件生成 MainWindow.py 文件：
+main-window.ui 文件使用 Qt Designer 编辑，从 .ui 文件生成 MainWindow.py 文件：
 
 ```sh
-pyuic5 main-window.ui MainWindow.py
+pyuic5 main-window.ui -o MainWindow.py
+```
+
+Windows 下安装 pyuic5 与 Qt Designer：
+
+```sh
+pip3 install pyqt5-tools
 ```
 
 ## 注意事项
